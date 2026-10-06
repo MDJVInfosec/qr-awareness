@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>QR Code Phishing Awareness</title>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --card: #ffffff;
+    --ink: #16202c;
+    --muted: #55616f;
+    --line: #dde1e6;
+    --accent: #0b5cad;
+    --accent-ink: #ffffff;
+    --warn: #b3261e;
+    --warn-bg: #fdecea;
+    --ok: #1b6e3c;
+    --ok-bg: #e7f4ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10161d;
+      --card: #1a222c;
+      --ink: #eef1f4;
+      --muted: #a3afbb;
+      --line: #2c3743;
+      --accent: #6fb1f5;
+      --accent-ink: #0c1620;
+      --warn: #ff8a80;
+      --warn-bg: #3a1c1a;
+      --ok: #7bd69d;
+      --ok-bg: #16301f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 20px 16px 48px; }
+  header { padding: 28px 0 8px; }
+  .tag {
+    display: inline-block;
+    font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--warn); background: var(--warn-bg);
+    padding: 5px 10px; border-radius: 4px;
+  }
+  h1 { font-size: 30px; line-height: 1.2; margin: 14px 0 10px; }
+  h2 { font-size: 20px; line-height: 1.3; margin: 0 0 12px; }
+  p { margin: 0 0 12px; }
+  .lead { font-size: 19px; color: var(--muted); }
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 18px;
+    margin-top: 16px;
+  }
+  .safe { background: var(--ok-bg); border-color: transparent; }
+  .safe strong { color: var(--ok); }
+  ul, ol { margin: 0; padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  li:last-child { margin-bottom: 0; }
+  .urgent { border-left: 5px solid var(--warn); }
+  .btn {
+    display: block; text-align: center; text-decoration: none;
+    background: var(--accent); color: var(--accent-ink);
+    font-weight: 700; padding: 14px 16px; border-radius: 8px; margin-top: 16px;
+  }
+  .email { word-break: break-all; font-weight: 700; color: var(--accent); }
+  footer { color: var(--muted); font-size: 14px; text-align: center; margin-top: 28px; }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <span class="tag">Security awareness</span>
+    <h1>You just scanned a QR code. Did you check where it would take you?</h1>
+    <p class="lead">Criminals use QR codes to send people to fake websites. It's called <strong>quishing</strong> (QR code phishing), and it works because a QR code hides the link until after you've scanned it.</p>
+  </header>
+
+  <section class="safe">
+    <p><strong>You're safe.</strong> This page is from the Information Security team. It hasn't asked for, or collected, any of your details. Take two minutes to read on so you can spot the real thing.</p>
+  </section>
+
+  <section>
+    <h2>How quishing works</h2>
+    <p>An attacker puts a QR code on a poster, sticker, letter, email or parking sign. Scanning it opens a convincing copy of a login page, payment page or "document share". Anything you type goes straight to the attacker.</p>
+    <p>Because you scan with your personal phone, the usual email and web filters on your work device never get a chance to block it.</p>
+  </section>
+
+  <section>
+    <h2>Red flags to look for</h2>
+    <ul>
+      <li><strong>Unexpected codes.</strong> A QR code in an email, text or letter you weren't expecting, especially about passwords, MFA, payroll, deliveries or fines.</li>
+      <li><strong>Urgency or pressure.</strong> "Your account will be locked today", "Action required within 24 hours".</li>
+      <li><strong>Stickers over stickers.</strong> A code stuck on top of another one on a sign, meter or noticeboard.</li>
+      <li><strong>A login page straight after scanning.</strong> Genuine notices rarely need you to sign in from a QR code.</li>
+      <li><strong>A web address that looks slightly off.</strong> Misspellings, extra words, odd endings, or a shortened link that hides the real destination.</li>
+      <li><strong>Requests for passwords, MFA codes or card details.</strong> Nobody legitimate needs your MFA code.</li>
+      <li><strong>Prompts to install an app</strong> or approve a sign-in you didn't start.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Before you scan</h2>
+    <ul>
+      <li>Ask yourself who put the code there and whether you can verify it.</li>
+      <li>Read the link preview your phone shows before you tap to open it.</li>
+      <li>If it claims to be a company system, go to it the way you normally would instead of using the code.</li>
+      <li>Not sure? Don't scan. Ask the Information Security team.</li>
+    </ul>
+  </section>
+
+  <section class="urgent">
+    <h2>If you entered your details on a suspicious page</h2>
+    <p>Act straight away. Speed matters far more than blame, and you will not be in trouble for reporting.</p>
+    <ol>
+      <li><strong>Change your password now</strong> from a trusted device, by going directly to the real site (not through the QR code or any link you were sent).</li>
+      <li><strong>Report it immediately</strong> to Information Security using the button below.</li>
+      <li><strong>Tell us if you approved an MFA prompt</strong> or shared a code, so sessions can be revoked.</li>
+      <li><strong>Changed the same password elsewhere?</strong> If you reuse it on other accounts, change those too.</li>
+      <li><strong>Keep the evidence.</strong> Don't delete the email or text. Take a photo of the poster or sticker and note where you saw it.</li>
+      <li><strong>Entered card or bank details?</strong> Contact your bank straight away.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Report it</h2>
+    <p>Report a suspicious QR code, or any concern that your account or data may have been compromised, even if you're not certain:</p>
+    <p class="email">information.security@macedragados.com</p>
+    <p>Include what you scanned, where and when you saw it, and what (if anything) you entered.</p>
+    <a class="btn" href="mailto:information.security@macedragados.com?subject=Suspected%20QR%20code%20phishing%20report">Email Information Security</a>
+  </section>
+
+  <footer>
+    Information Security team &middot; If in doubt, report it.
+  </footer>
+
+</main>
+</body>
+</html>
