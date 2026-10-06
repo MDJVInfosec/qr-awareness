@@ -171,6 +171,7 @@
   }
   .lead { font-size: clamp(18px, 2.4vw, 22px); color: var(--muted); max-width: 42ch; margin: 0; }
   .glitch { position: relative; color: var(--ink); animation: glitch 4s infinite; }
+  .glitch-title { animation: glitch-title 2.2s infinite; }
 
   .cue {
     position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 2;
@@ -289,6 +290,17 @@
     97% { text-shadow: 1px 0 var(--red), -1px 0 var(--cyan); }
   }
 
+  /* Title glitch: two short bursts per 2.2s cycle, offsets scaled for large type */
+  @keyframes glitch-title {
+    0%, 38%, 46%, 82%, 92%, 100% { text-shadow: none; }
+    40% { text-shadow: 4px 0 var(--red), -4px 0 var(--cyan); }
+    42% { text-shadow: -3px 0 var(--red), 3px 0 var(--cyan); }
+    44% { text-shadow: 2px 1px var(--red), -2px -1px var(--cyan); }
+    84% { text-shadow: -4px 0 var(--red), 4px 0 var(--cyan); }
+    87% { text-shadow: 3px -1px var(--red), -3px 1px var(--cyan); }
+    90% { text-shadow: -1px 0 var(--red), 1px 0 var(--cyan); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -319,7 +331,7 @@
     <div class="wrap">
       <div>
         <span class="tag reveal">Security awareness</span>
-        <h1 class="reveal">You just scanned a QR code. <span class="l2">Did you check where it would take you?</span></h1>
+        <h1 class="reveal"><span class="glitch-title">You just scanned a QR code.</span> <span class="l2">Did you check where it would take you?</span></h1>
         <p class="lead reveal">Criminals use QR codes to send people to fake websites. It's called <strong class="glitch">quishing</strong> (QR code phishing), and it works because a QR code hides the link until after you've scanned it.</p>
       </div>
     </div>
