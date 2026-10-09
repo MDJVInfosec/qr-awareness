@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#060a10">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'sha256-QX4/YVnsGk9QDx6D+KwWn8rbBD+G1CBhyCztUZLAB6U='; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'sha256-CVgcjNfMl35sRuFWNjkkQU7Vlf6zRLqNcuYLcYWppTc='; img-src data: https://mdjvinformationsecurity.goatcounter.com; base-uri 'none'; form-action 'none'">
 <title>MDJV QR Code Phishing Awareness Campaign</title>
 <style>
   /* ---------- Theme tokens ---------- */
@@ -332,6 +332,7 @@
 </head>
 <body>
 
+<noscript><img src="https://mdjvinformationsecurity.goatcounter.com/count?p=%2Fnoscript" alt="" width="1" height="1" style="position:absolute;opacity:0"></noscript>
 <div class="progress" aria-hidden="true"></div>
 
 <nav class="dots" aria-label="Sections">
@@ -553,6 +554,17 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     Object.keys(dots).forEach(function (id) { var s = document.getElementById(id); if (s) spy.observe(s); });
   }
+  // Anonymous visit count (GoatCounter: no cookies, no personal data).
+  // An optional ?src=<tag> on the QR link is recorded so scans can be split by poster location.
+  try {
+    var host = location.hostname;
+    if (location.protocol !== 'file:' && host !== 'localhost' && host !== '127.0.0.1') {
+      var tag = (new URLSearchParams(location.search).get('src') || '').toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 40);
+      var path = location.pathname + (tag ? '?src=' + tag : '');
+      new Image().src = 'https://mdjvinformationsecurity.goatcounter.com/count?p=' + encodeURIComponent(path) +
+        '&t=' + encodeURIComponent(document.title) + '&rnd=' + Math.random().toString(36).slice(2);
+    }
+  } catch (e) { /* counting must never break the page */ }
 })();
 </script>
 </body>
